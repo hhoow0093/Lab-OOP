@@ -1,0 +1,23 @@
+1.	Multi dimensional Array 
+	merupakan bentuk array yang menggunakan baris dan column untuk 
+	merepresentasikan informasi dalam berbagai cell. Biasanya banyak diguanakn dalam game untuk merepresentasikan
+	map, dll. juga bisa digunakan untuk menghitung maatriks dan berbagai dalam aplikasi machine learning.
+
+2. 	Method string dalam java
+	1. charAt() -> untuk melihat character apa dalam index string
+	2. substring() ->  mengambil partisi dari string original yang dimulai dari index ke berapa dalam string original
+	3. contains() -> untuk cek jika sebuah char atau substring ada dalam string original
+	4. replace() -> mengubah char pada original string menjadi char baru dalam string original
+	5. length() -> cek panjang original string
+	6. toLowerCase() -> mengubah seluruh char pada original string menjadi char yang kecil
+	7. toUpperCase() -> mengubah seluruh char pada original string menjadi char yang besar
+	8. concat() -> mengabungkan string original dan string baru
+	9. isEmpty() -> cek jika string kosong
+	10 endsWith() -> cek apakah string yang diketik adalah char yang tekahir atau substring yang mengandung char terakhir
+	11. getChars(index awal, index akhir + 1, arrayChar, index ke berapa dalam char array) -> replace array char dengan string yang diketik
+	12. matches() -> biasanya digunakan untuk cek apakah string sesuai dengan aturan regex
+	13. startsWith() -> check apakah string yang diketik adalah char yang awal atau substring yang mengandung char awal
+	
+3. 	Keuntungan immutability string dalam java
+	1. biasanya digunakan dalam password, atau informasi yang rahasia dengan tujuan peningkatan keamanan jika nilai string diganti.
+	2. biar nilai key pada string selalu konsisten dengan tujuan untuk aksesibilitas yang mudah dalam hashmap, array, dll.

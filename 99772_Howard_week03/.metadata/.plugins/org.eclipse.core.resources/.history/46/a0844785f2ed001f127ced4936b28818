@@ -1,0 +1,28 @@
+package Tugas;
+import java.util.Scanner;
+
+public class Tugas2 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("masukkan input string:");
+		String input_String = scanner.nextLine();
+//		boolean flag = 1;
+//		while(flag) {
+			System.out.println(String.format("String yang di input: %s", input_String));
+			System.out.println("---------------------------------------------------");
+			System.out.print("masukkan pilihan (1-10): ");
+			int input = scanner.nextInt();
+			System.out.println(String.format("01. charAt %20s 02. length", ""));
+			System.out.println(String.format("03. substring(m) %10s 04. substring(m, n)", ""));
+			System.out.println(String.format("05. contains %10s 06. concat", ""));
+			System.out.println(String.format("07. replace %10s 08. split", ""));
+			System.out.println(String.format("09. lowercase %10s 10. uppercase", ""));
+			
+			
+			
+//		}
+		
+		
+	}
+
+}

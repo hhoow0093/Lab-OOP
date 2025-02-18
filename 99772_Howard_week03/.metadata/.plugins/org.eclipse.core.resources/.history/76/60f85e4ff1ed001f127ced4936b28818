@@ -1,0 +1,14 @@
+package Tugas;
+import java.util.Scanner;
+
+public class Tugas2 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("masukkan input string:");
+		String input_String = scanner.nextLine();
+		System.out.println(String.format("String yang di input: %s", input_String));
+		
+		
+	}
+
+}

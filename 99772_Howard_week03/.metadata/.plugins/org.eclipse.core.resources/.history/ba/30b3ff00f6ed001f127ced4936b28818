@@ -1,0 +1,79 @@
+package Tugas;
+import java.util.Scanner;
+import java.io.IOException;
+
+public class Tugas2 {
+	
+    public static void waitUserInput() {
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Continuing...");
+    }
+    
+    public static void clearScreen() {
+        try {
+            if (System.getProperty("os.name").contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+    
+	public static void handleCharAt(String input, Scanner scanner) {
+		System.out.print(String.format("masukkan angka dari %d sampai %d untuk dapat char dari string original: ", 0, input.length() - 1));
+		int inputCharAt = scanner.nextInt();
+		if(inputCharAt < 0 || inputCharAt > (input.length() -1)) {
+			System.out.println("masukkan index yang benar!");
+			System.out.println("press any key to continue... ");
+			waitUserInput();
+			clearScreen();
+			
+		}else {
+			System.out.println(String.format("char dari %d adalah %c", inputCharAt, input.charAt(inputCharAt)));
+			System.out.println("press any key to continue... ");
+			waitUserInput();
+			clearScreen();
+		}
+		
+	}
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("masukkan input string:");
+		
+		String input_String = scanner.nextLine();
+		System.out.println();
+		System.out.println();
+		
+		boolean flag = true;
+		while(flag) {
+			System.out.println(String.format("String yang di input: %s", input_String));
+			System.out.println("---------------------------------------------------");
+			System.out.println(String.format("01. charAt %16s 02. length", ""));
+			System.out.println(String.format("03. substring(m) %10s 04. substring(m, n)", ""));
+			System.out.println(String.format("05. contains %14s 06. concat", ""));
+			System.out.println(String.format("07. replace %15s 08. split", ""));
+			System.out.println(String.format("09. lowercase %13s 10. uppercase", ""));
+			System.out.print("masukkan pilihan (1-10) atau -1 untuk keluar: ");
+			int input = scanner.nextInt();
+			switch(input) {
+				case 1:  clearScreen(); handleCharAt(input_String, scanner); break;
+				case -1: clearScreen(); flag = false; break;
+			}
+			
+			
+			
+		}
+		System.out.print("program selesai!");
+		
+		
+	}
+
+}

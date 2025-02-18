@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\Kuliah\Semester 4\Object Oriented Programming\Lab\99772_Howard_week03\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3803894794.index
+676389914.index
