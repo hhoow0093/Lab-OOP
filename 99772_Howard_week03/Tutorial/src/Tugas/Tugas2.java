@@ -1,4 +1,5 @@
 package Tugas;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.IOException;
 
@@ -28,8 +29,10 @@ public class Tugas2 {
     }
     
 	public static void handleCharAt(String input, Scanner scanner) {
+		System.out.println(String.format("String input : %s", input));
 		System.out.print(String.format("masukkan angka dari %d sampai %d untuk dapat char dari string original: ", 0, input.length() - 1));
 		int inputCharAt = scanner.nextInt();
+		System.out.println("-----------------------------------------------------------------------------------");
 		if(inputCharAt < 0 || inputCharAt > (input.length() -1)) {
 			System.out.println("masukkan index yang benar!");
 			System.out.println("press any key to continue... ");
@@ -37,6 +40,7 @@ public class Tugas2 {
 			clearScreen();
 			
 		}else {
+			System.out.println(String.format("String input : %s", input));
 			System.out.println(String.format("char dari %d adalah %c", inputCharAt, input.charAt(inputCharAt)));
 			System.out.println("press any key to continue... ");
 			waitUserInput();
@@ -46,6 +50,7 @@ public class Tugas2 {
 	}
 	
 	public static void handleLength(String input) {
+		System.out.println(String.format("String input : %s", input));
 		System.out.println(String.format("panjang pada %s adalah %d", input, input.length()));
 		System.out.println("press any key to continue... ");
 		waitUserInput();
@@ -56,6 +61,7 @@ public class Tugas2 {
 		System.out.println("substring(m)");
 		System.out.print("parameter m: ");
 		int inputSubStringAt = scanner.nextInt();
+		System.out.println("-----------------------------------------------------------------------------------");
 		if(inputSubStringAt < 0 || inputSubStringAt > (input.length() -1)) {
 			System.out.println("masukkan index yang benar!");
 			System.out.println("press any key to continue... ");
@@ -63,6 +69,7 @@ public class Tugas2 {
 			clearScreen();
 			
 		}else {
+			System.out.println(String.format("String input : %s", input));
 			System.out.println(String.format("substring dari index ke %d adalah %s", inputSubStringAt, input.substring(inputSubStringAt)));
 			System.out.println("press any key to continue... ");
 			waitUserInput();
@@ -77,6 +84,7 @@ public class Tugas2 {
 		int inputSubStringAt1 = scanner.nextInt();
 		System.out.print("parameter n: ");
 		int inputSubStringAt2 = scanner.nextInt();
+		System.out.println("-----------------------------------------------------------------------------------");
 		if(inputSubStringAt1 < 0 || inputSubStringAt1 > (input.length() -1) || inputSubStringAt2 < 0  || inputSubStringAt2 > (input.length() + 1)) {
 			System.out.println("masukkan index yang benar!");
 			System.out.println("press any key to continue... ");
@@ -90,6 +98,7 @@ public class Tugas2 {
 			clearScreen();
 			
 		}else {
+			System.out.println(String.format("String input : %s", input));
 			System.out.println(String.format("substring adalah: %s", input.substring(inputSubStringAt1, inputSubStringAt2)));
 			System.out.println("press any key to continue... ");
 			waitUserInput();
@@ -104,13 +113,16 @@ public class Tugas2 {
 		System.out.print("masukkan string : ");
 		scanner.nextLine();
 		String containshaha = scanner.nextLine();
+		System.out.println("-----------------------------------------------------------------------------------");
 		if(input.contains(containshaha)) {
+			System.out.println(String.format("String input : %s", input));
 			System.out.println(String.format("String %s contains %s", containshaha, input));
 			System.out.println("press any key to continue... ");
 			waitUserInput();
 			clearScreen();
 			
 		}else if(!input.contains(containshaha)) {
+			System.out.println(String.format("String input : %s", input));
 			System.out.println(String.format("String %s tidak contain %s", containshaha, input));
 			System.out.println("press any key to continue... ");
 			waitUserInput();
@@ -119,6 +131,83 @@ public class Tugas2 {
 		
 	}
 	
+	public static void handleconcat(String input, Scanner scanner) {
+		System.out.println(String.format("String input : %s", input));
+		scanner.nextLine();
+		System.out.print("masukkan string untuk digabung: ");
+		String string2 = scanner.nextLine();
+		String newString = input.concat(string2); 
+		System.out.println("-----------------------------------------------------------------------------------");
+		System.out.println(String.format("hasil gabung antara string %s dan string %s adalah %s", input, string2, newString));
+		System.out.println("press any key to continue... ");
+		waitUserInput();
+		clearScreen();
+		
+	}
+	
+	public static void handleReplace(String input,Scanner scanner ) {
+		System.out.println(String.format("String input : %s", input));
+		System.out.println("replace(m, n), m adalah char dalam string original, n adalah char ");
+		System.out.print("parameter m: ");
+		String input1 = scanner.next();
+		char char1 = input1.charAt(0);
+		
+		System.out.print("parameter n: ");
+		String input2 = scanner.next();
+		char char2 = input2.charAt(0);
+		System.out.println("-----------------------------------------------------------------------------------");
+		if(!input.contains(input1)) {
+			System.out.println("pastikan parameter m merupakan char yang dimiliki oleh original string");
+			System.out.println("press any key to continue... ");
+			waitUserInput();
+			clearScreen();
+		}else {
+			String newString = input.replace(char1, char2); 
+			System.out.println(String.format("hasil replace antara string %s dengan %c melalui %c adalah %s", input, char2, char1, newString));
+			System.out.println("press any key to continue... ");
+			waitUserInput();
+			clearScreen();
+		}
+		
+		
+	}
+	public static void handleSplit(String input, Scanner scanner) {
+		System.out.println(String.format("String input : %s", input));
+		System.out.print("splitter: ");
+		String splitter = scanner.next();
+		System.out.println("-----------------------------------------------------------------------------------");
+		if(splitter.length() > 1) {
+			System.out.println("Pastikan splitter ada 1 aja");
+			System.out.println("press any key to continue... ");
+			waitUserInput();
+			clearScreen();
+		}else {
+			String[] myArr = input.split(splitter);
+			System.out.println(String.format("isi dalam array %s", Arrays.toString(myArr)));
+			System.out.println("press any key to continue... ");
+			waitUserInput();
+			clearScreen();
+		}
+		
+	}
+	
+	public static void handleUppercase(String input) {
+		System.out.println(String.format("String input : %s", input));
+		System.out.println(String.format("Hasil Uppercase String: %s", input.toUpperCase()));
+		System.out.println("press any key to continue... ");
+		waitUserInput();
+		clearScreen();
+		
+	}
+	
+	public static void handleLowercase(String input) {
+		System.out.println(String.format("String input : %s", input));
+		System.out.println(String.format("Hasil Lowercase String: %s", input.toLowerCase()));
+		System.out.println("press any key to continue... ");
+		waitUserInput();
+		clearScreen();
+		
+	}
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -145,6 +234,12 @@ public class Tugas2 {
 				case 3: clearScreen(); handleSubstringOneParameter(input_String, scanner); break;
 				case 4: clearScreen(); handleSubstringTwoParameter(input_String, scanner); break;
 				case 5: clearScreen(); handleContains(input_String, scanner); break;
+				case 6: clearScreen(); handleconcat(input_String, scanner); break;
+				case 7: clearScreen(); handleReplace(input_String, scanner); break;
+				case 8: clearScreen(); handleSplit(input_String, scanner); break;
+				case 9: clearScreen(); handleUppercase(input_String); break;
+				case 10: clearScreen(); handleLowercase(input_String); break;
+				
 				case -1: clearScreen(); flag = false; break;
 			}
 			
