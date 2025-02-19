@@ -1,0 +1,56 @@
+package LatihanLecture;
+
+public class Latihan5 {
+	public static boolean checkbaris(int[][] sudoku) {
+		for(int i = 0; i <3; i++ ) {
+			if(sudoku[i][0] == sudoku[i][1] || sudoku[i][0] == sudoku[i][2] || sudoku[i][1] == sudoku[i][2]) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	public static boolean checkkolum(int[][] sudoku) {
+		for(int j = 0; j < 3; j++) {
+			if(sudoku[0][j] == sudoku[1][j] || sudoku[0][j] == sudoku[2][j] || sudoku[1][j] == sudoku[2][j]) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static void main(String[] args) {
+//		int[][] sudoku = 	{
+//							{1, 2, 3},
+//							{2, 3, 1},
+//							{3, 1, 2}
+//							};
+		
+		int[][] sudoku = new int[3][3];
+		
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++) {
+				sudoku[i][j] = 1 + (int)(Math.random() * 3);		
+			}
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++) {
+				System.out.print(String.format("%d ", sudoku[i][j]));		
+			}
+			System.out.println();
+		}
+		
+		boolean untukbaris = checkbaris(sudoku);
+		boolean untukkolum = checkkolum(sudoku);
+		
+		if(untukbaris && untukkolum) {
+			System.out.println("sudoku");
+		}else {
+			System.out.println("non-sudoku");
+		}
+		
+		
+	}
+	
+
+}

@@ -1,0 +1,30 @@
+package LatihanLecture;
+
+public class Latihan1 {
+	public static void main(String[] args) {
+		int[] randomArrayScore = new int[10];
+		for(int i = 0; i < randomArrayScore.length; i++) {
+			randomArrayScore[i] = (int) (Math.random() * 101);
+		}
+		System.out.println("isi dalam array adalah: ");
+		for(int Scores: randomArrayScore) {
+			System.out.println(Scores);
+		}
+		
+		int max = randomArrayScore[0];
+		int min = randomArrayScore[0];
+		
+		for(int i = 1; i < randomArrayScore.length; i++) {
+				if(max < randomArrayScore[i]) {
+					max = randomArrayScore[i];
+				}
+				if(min > randomArrayScore[i]) {
+					min = randomArrayScore[i];
+				}
+			}
+		System.out.println(String.format("hasil minimumnya adalah: %d", min));
+		System.out.println(String.format("hasil maximumnya adalah: %d", max));
+		}
+		
+
+}

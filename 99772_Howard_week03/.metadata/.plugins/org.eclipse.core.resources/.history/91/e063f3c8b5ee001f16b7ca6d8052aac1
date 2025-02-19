@@ -1,0 +1,18 @@
+package LatihanLecture;
+
+public class Latihan2 {
+	public static void main(String[] args) {
+		float [] tinggi_badan_array = new float[10];
+		for(int i = 0; i < tinggi_badan_array.length; i++) {
+			tinggi_badan_array[i] = 145 + (float)(Math.random() * 36);
+			
+		}
+		System.out.println("Isi array tinggi badan: ");
+		for(float tinggibadan: tinggi_badan_array) {
+			System.out.println(tinggibadan);
+		}
+		
+		
+	}
+
+}

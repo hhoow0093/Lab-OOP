@@ -1,0 +1,10 @@
+package LatihanLecture;
+
+public class Latihan1 {
+	int[] randomArrayScore = new int[10];
+	for(int i = 0; i < randomArrayScore.length(); i++) {
+		randomArrayScore[i] = (int) Math.random() * 101;
+	}
+	
+
+}
